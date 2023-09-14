@@ -1,4 +1,9 @@
 namePrefix: kustomize-
 
+images:
+  - name: nginx
+    newName: nginx
+    newTag: 1.20
+
 resources:
   - deployment.yaml
