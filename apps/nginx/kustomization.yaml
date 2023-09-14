@@ -1,6 +1,6 @@
 namePrefix: kustomize-
 resources:
-- deployment.yaml
+  - deployment.yaml
 images:
-- name: nginx
-  newTag: 1.25.2
+  - name: nginx
+    newTag: 1.20
