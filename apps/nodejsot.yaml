@@ -1,22 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx
+  name: nodejsot
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '0'
-    argocd-image-updater.argoproj.io/image-list: ng=nginx:~1.18
-    argocd-image-updater.argoproj.io/ng.ignore-tags: '*'
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
-    argocd-image-updater.argoproj.io/git-branch: main
-    argocd-image-updater.argoproj.io/write-back-target: kustomization
-    argocd-image-updater.argoproj.io/ng.force-update: 'true'
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    path: apps/nginx
+    path: apps/nodejsot
     repoURL: https://github.com/Esanim/auto-updater-test.git
     targetRevision: main
   destination:
