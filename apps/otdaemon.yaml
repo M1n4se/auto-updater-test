@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otdaemon
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '0'
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    targetRevision: 0.37.1
+    helm:
+      valueFiles:
+        - daemonset.yaml
+    chart: opentelemetry-operator
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring
+  syncPolicy:
+    syncOptions:
+      - PruneLast=true
+      - FailOnSharedResource=true
+      - CreateNamespace=false
+    automated:
+      prune: true
+      selfHeal: true
