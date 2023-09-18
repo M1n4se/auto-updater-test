@@ -16,3 +16,9 @@ spec:
       containers:
         - image: m1nase/ottest1:latest
           name: nodejsot
+          env:
+            - name: KUBE_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
