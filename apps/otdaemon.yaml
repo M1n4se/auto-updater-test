@@ -14,7 +14,7 @@ spec:
     targetRevision: 0.37.1
     helm:
       valueFiles:
-        - daemonset.yaml
+        - apps/daemonset.yaml
     chart: opentelemetry-operator
   destination:
     server: 'https://kubernetes.default.svc'
