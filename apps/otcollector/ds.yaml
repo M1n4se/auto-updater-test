@@ -69,7 +69,7 @@ spec:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter,k8sattributes,batch]
-          exporters: [prometheus]
+          exporters: [otlp]
       telemetry:
         metrics:
           address: ":8888"
