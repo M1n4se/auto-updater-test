@@ -54,7 +54,7 @@ spec:
 
     exporters:
       prometheus:
-        endpoint: prometheus-server:80
+        endpoint: http://prometheus-server.monitoring.svc.cluster.local:80
         namespace: monitoring
 
     extensions:
