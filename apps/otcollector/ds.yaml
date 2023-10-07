@@ -55,6 +55,8 @@ spec:
     exporters:
       prometheus:
         endpoint: prometheus-server.monitoring.svc.cluster.local:81
+      logging:
+        logLevel: debug
 
     extensions:
       memory_ballast:
@@ -69,7 +71,7 @@ spec:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter,k8sattributes,batch]
-          exporters: [prometheus]
+          exporters: [logging]
       telemetry:
         metrics:
           address: ":8888"
