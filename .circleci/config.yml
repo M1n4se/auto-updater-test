@@ -13,10 +13,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello"
+          name: 'Say hello'
+          command: 'echo Hello'
 
-    say-goodbye:
+  say-goodbye:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -26,8 +26,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say goodbye"
-          command: "echo goodbye"
+          name: 'Say goodbye'
+          command: 'echo goodbye'
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -38,10 +38,10 @@ workflows:
           filters:
             branches:
               ignore:
-                - "*"
+                - '*'
             tags:
               ignore:
-                - "*"
+                - '*'
             pull-requests:
               ignore: true
       - say-goodbye:
