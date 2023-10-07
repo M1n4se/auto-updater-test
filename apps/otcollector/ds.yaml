@@ -67,3 +67,5 @@ spec:
       telemetry:
         metrics:
           address: ":8888"
+        logs:  
+          logLevel: "debug"
