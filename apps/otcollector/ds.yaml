@@ -55,8 +55,7 @@ spec:
     exporters:
       prometheus:
         endpoint: prometheus-server.monitoring.svc.cluster.local:81
-      otlp:
-
+        
     extensions:
       memory_ballast:
         size_in_percentage: 20
