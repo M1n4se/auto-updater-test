@@ -35,15 +35,7 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello:
-          filters:
-            branches:
-              ignore:
-                - '*'
-            tags:
-              ignore:
-                - '*'
-            pull-requests:
-              ignore: true
+          type: approval
       - say-goodbye:
           requires:
             - say-hello
