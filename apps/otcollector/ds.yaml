@@ -53,7 +53,9 @@ spec:
             - k8s.pod.start_time
 
     exporters:
-      debug:
+      prometheus:
+        endpoint: prometheus-server:80
+        namespace: monitoring
 
     extensions:
       memory_ballast:
@@ -68,7 +70,7 @@ spec:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter,k8sattributes,batch]
-          exporters: [debug]
+          exporters: [prometheus]
       telemetry:
         metrics:
           address: ":8888"
