@@ -6,6 +6,7 @@ spec:
   image: otel/opentelemetry-collector-contrib:0.74.0
   serviceAccount: monitoring-sa
   mode: daemonset
+  hostNetwork: true
   ports:
     - name: metric
       port: 9090
