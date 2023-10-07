@@ -56,9 +56,6 @@ spec:
       prometheus:
         endpoint: prometheus-server.monitoring.svc.cluster.local:81
       otlp:
-        protocols:
-          grpc:
-          http:
 
     extensions:
       memory_ballast:
