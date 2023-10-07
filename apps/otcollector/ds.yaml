@@ -56,7 +56,6 @@ spec:
       prometheus:
         endpoint: prometheus-server.monitoring.svc.cluster.local:81
       logging:
-        logLevel: debug
 
     extensions:
       memory_ballast:
