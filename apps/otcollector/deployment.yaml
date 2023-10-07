@@ -5,7 +5,7 @@ metadata:
 spec:
   # image: otel/opentelemetry-collector-contrib:0.74.0
   serviceAccount: monitoring-sa
-  # mode: daemonset
+  mode: deployment
   # hostNetwork: true
   # ports:
   #   - name: metric
