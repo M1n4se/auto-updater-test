@@ -55,7 +55,7 @@ spec:
     exporters:
       prometheus:
         endpoint: prometheus-server.monitoring.svc.cluster.local:81
-        
+
     extensions:
       memory_ballast:
         size_in_percentage: 20
@@ -69,7 +69,7 @@ spec:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter,k8sattributes,batch]
-          exporters: [otlp]
+          exporters: [prometheus]
       telemetry:
         metrics:
           address: ":8888"
