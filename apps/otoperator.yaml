@@ -1,26 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: otcollector
+  name: ot-operator
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: '0'
+    argocd.argoproj.io/sync-wave: '2'
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  destination:
+    namespace: monitoring
+    server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/otcollector
-    repoURL: https://github.com/Esanim/auto-updater-test.git
-    targetRevision: main
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: monitoring
+    chart: opentelemetry-operator
+    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    targetRevision: 0.38.0
   syncPolicy:
     syncOptions:
       - PruneLast=true
       - FailOnSharedResource=true
-      - CreateNamespace=false
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
