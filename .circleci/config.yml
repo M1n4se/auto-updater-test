@@ -33,8 +33,8 @@ jobs:
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
+    when: false
     jobs:
-      when: false
       - say-hello:
           type: approval
       - say-goodbye:
