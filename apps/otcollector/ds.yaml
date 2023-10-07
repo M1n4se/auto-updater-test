@@ -54,7 +54,7 @@ spec:
 
     exporters:
       prometheus:
-        endpoint: http://prometheus-server.monitoring.svc.cluster.local:81
+        endpoint: prometheus-server.monitoring.svc.cluster.local:81
 
     extensions:
       memory_ballast:
