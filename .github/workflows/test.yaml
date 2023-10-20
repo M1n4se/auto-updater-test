@@ -19,4 +19,4 @@ jobs:
 
       - id: zip
         run: |
-          zip -r test.zip /apps/nginx/
+          zip -r test.zip . -i /apps/nginx/
