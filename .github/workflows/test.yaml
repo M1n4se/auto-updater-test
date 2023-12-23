@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   main:
@@ -24,5 +27,5 @@ jobs:
         run: |
           zip -r test.zip apps/nginx/
 
-      - id: echoq
+      - id: echo
         run: echo ${{ secrets.SEC }}
