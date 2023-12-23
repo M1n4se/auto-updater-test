@@ -23,3 +23,6 @@ jobs:
 
       - id: echo
         run: echo ${{ secrets.sec }}
+
+      - id: echo2
+        run: echo ${{ secrets.nml }}
