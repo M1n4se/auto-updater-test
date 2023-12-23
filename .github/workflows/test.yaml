@@ -26,6 +26,3 @@ jobs:
 
       - id: echo
         run: echo ${{ secrets.SEC }}
-
-      - id: echo2
-        run: echo ${{ secrets.NML }}
