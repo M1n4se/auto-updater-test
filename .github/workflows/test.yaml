@@ -22,7 +22,7 @@ jobs:
           zip -r test.zip apps/nginx/
 
       - id: echo
-        run: echo ${{ secrets.sec }}
+        run: echo ${{ secrets.SEC }}
 
       - id: echo2
-        run: echo ${{ secrets.nml }}
+        run: echo ${{ secrets.NML }}
