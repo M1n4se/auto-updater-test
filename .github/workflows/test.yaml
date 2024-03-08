@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+
   pull_request:
     branches:
       - 'main'
@@ -12,9 +13,9 @@ jobs:
   main:
     name: Validate PR title
     runs-on: ubuntu-latest
-    environment: 
-      name: prod
-      url: https://github.com
+    # environment:
+    #   name: prod
+    #   url: https://github.com
 
     permissions:
       pull-requests: write
@@ -27,5 +28,5 @@ jobs:
         run: |
           zip -r test.zip apps/nginx/
 
-      - id: echo
-        run: echo ${{ secrets.SEC }}
+      # - id: echo
+      #   run: echo ${{ secrets.SEC }}
