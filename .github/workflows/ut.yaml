@@ -31,7 +31,7 @@ jobs:
           ref: ${{  github.event.pull_request.head.sha }}
       - name: Run tests
         run: |
-          if [[ "x${{ secrets.MY_SECRET }}" == "xval" ]]; then
+          if [[ "${{ secrets.MY_SECRET }}" == "xval" ]]; then
             echo "Access to secrets"
           else
             echo "No access to secrets"
